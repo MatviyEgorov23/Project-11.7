@@ -1,0 +1,38 @@
+#include <cmath>
+#include <iostream>
+using namespace std;
+
+
+double function1(double x)
+{
+	double f1 = 8 * log(fabs(sin(x) + 5));
+	return f1;
+}
+
+double function2(double x)
+{
+	double f2 = 1 / (pow(sin(x), 3) + 5.4) - log(fabs(x));
+
+	return f2;
+}
+
+int main()
+{
+	setlocale(LC_ALL, "ukr");
+
+
+	double a, b, x, z, f;
+	a = 0;
+	b = 0;
+	for (int k = 6; k <= 14; k++)
+		a = a + function1(k);
+	for (int k = 6; k <= 17; k++)
+		b = b + function2(k);
+	z = sin(a) - b;
+	std::cout << "a = " << a << endl;
+	std::cout << "b = " << b << endl;
+	std::cout << "z = " << z << endl;
+	return 0;
+
+
+}
